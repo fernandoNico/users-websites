@@ -1,0 +1,134 @@
+<br>
+<div class="container">
+
+    
+        
+
+        <!-- <div class="form-group col-md-12" *ngIf="AddressList">
+                <label for="exampleFormControlSelect1">Select Address</label>
+                <select class="form-control" id="exampleFormControlSelect1"  >
+                    <option *ngFor="let address of AddressList.addresses">{{address}}</option>
+                  </select>
+
+        </div> -->
+
+        <div class="form-group col-md-12" >
+                <div class="card ">
+                    <div class="card-footer text-right ">
+                        <a  class="btn btn-warning btn-sm"> <i class="fa fa-check" aria-hidden="true"></i> Attend this event </a>
+                        <a  class="btn btn-info btn-sm" (click)="deleteEvent(event)"> <i class="fa fa-share-alt" aria-hidden="true"></i> Share </a>
+                        <br>
+                    </div>
+                    <div class="card-body text-center">
+                        
+                          <br>
+                          <ngb-tabset class="text-center">
+                              
+                              <ngb-tab>
+                                <ng-template ngbTabTitle><b>Event Details</b> </ng-template>
+                                <ng-template ngbTabContent>
+                                  <br>
+                                    <h1>{{evenDetails?.eventTitle}}</h1>
+                                    <p> <b>From :</b>  {{evenDetails?.eventStartDate | date:'medium' }}</p>
+                                    <p><b>To :</b> {{evenDetails?.eventEndDate | date:'medium'}}</p>
+                                    <p>{{evenDetails?.eventDescription}}</p>
+                                    <b>At</b>
+                                    <br>
+                                    <small>{{evenDetails?.eventStreet}}</small><br>
+                                    <small>{{evenDetails?.eventPostcode}}</small>
+                                    <br> <br>
+                                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                                      </agm-map>
+                                      <br>
+                                      <hr>
+                                </ng-template>
+                              </ngb-tab>
+
+                              <ngb-tab>
+                                  <ng-template ngbTabTitle><b>Event Program</b> </ng-template>
+                                  <ng-template ngbTabContent>
+                                   
+                                    <div class="text-left">
+                                        <br>
+                                        <h2>Files</h2>
+                                        <eventfiles></eventfiles>
+                                        <br>
+                                        <h2>Videos</h2>
+
+                                        
+                                              <div *ngFor="let a of videolist" >
+                                                <div class="card" >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Video Title: {{a.string}}</h5>
+                                                      <iframe  [src]="getEmbedUrl(a)" frameborder="0" 
+                                                      gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                              </div>  
+
+                                    </div>
+                                    
+                                    
+                                  </ng-template>
+                                </ngb-tab>
+
+
+                                <ngb-tab>
+                                    <ng-template ngbTabTitle><b>Event Speakers</b> </ng-template>
+                                    <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+                                      <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+                                      craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                                      cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+                                      yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                                      shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
+                                      sint qui sapiente accusamus tattooed echo park.</p>
+                                    </ng-template>
+                                  </ngb-tab>
+
+
+                                  <ngb-tab>
+                                      <ng-template ngbTabTitle><b>Who is Attending?</b> </ng-template>
+                                      <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+                                        <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+                                        craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                                        cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+                                        yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                                        shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
+                                        sint qui sapiente accusamus tattooed echo park.</p>
+                                      </ng-template>
+                                    </ngb-tab>
+
+                                    <ngb-tab>
+                                        <ng-template ngbTabTitle><b>Organiser</b> </ng-template>
+                                        <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+                                          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+                                          craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                                          cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+                                          yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                                          shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
+                                          sint qui sapiente accusamus tattooed echo park.</p>
+                                        </ng-template>
+                                      </ngb-tab>
+
+
+                              
+                            </ngb-tabset>
+
+                         <!-- END OF DIV CARD  -->
+                    </div>
+                   
+                   
+                
+
+
+                
+
+              </div>
+        </div>
+
+        <br><br>
+
+</div>
+

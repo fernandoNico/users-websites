@@ -1,0 +1,10 @@
+<div id="wrapper">
+
+    <div *ngFor="let upload of uploads | async">
+        <br>
+        <files-detail [upload]='upload'></files-detail>
+       
+      </div>
+      <br>
+
+</div>
